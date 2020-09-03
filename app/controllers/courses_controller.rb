@@ -1,14 +1,17 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
-  # GET /courses
-  # GET /courses.json
   def index
-    if params[:title]
-      @courses = Course.where('title ILIKE ?', "%#{params[:title]}%") #case-insensitive
-    else
-      @courses = Course.all
-    end
+    # if params[:title]
+    #   @courses = Course.where('title ILIKE ?', "%#{params[:title]}%") #case-insensitive
+    # else
+    #   #@courses = Course.all
+    #
+    #   # @q = Course.ransack(params[:q])
+    #   # @courses = @q.result.includes(:user)
+    # end
+    @ransack_courses = Course.ransack(params[:courses_search], search_key: :courses_search)
+    @courses = @ransack_courses.result.includes(:user)
   end
 
   # GET /courses/1
@@ -56,8 +59,6 @@ class CoursesController < ApplicationController
     end
   end
 
-  # DELETE /courses/1
-  # DELETE /courses/1.json
   def destroy
     @course.destroy
     respond_to do |format|
@@ -67,13 +68,11 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_course
       @course = Course.friendly.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:title, :description)
+      params.require(:course).permit(:title, :description, :short_description, :price, :language, :level)
     end
 end
