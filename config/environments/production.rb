@@ -1,4 +1,8 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = { :host => 'collabor8-app.herokuapp.com', :protocol => 'https' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -8,7 +12,7 @@ Rails.application.configure do
   email: {
     deliver_with: :deliver, # Rails >= 4.2.1 do not need this option since it defaults to :deliver_now
     email_prefix: '[PREFIX] ',
-    sender_address: %{"rubygems error" <support@collabor8.herokuapp.com>},
+    sender_address: %{"rubygems error" <support@collabor8-app.herokuapp.com>},
     exception_recipients: %w{vishal.patel@sidewayseight.co.uk}
   }
 
