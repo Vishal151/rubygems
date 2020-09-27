@@ -12,15 +12,18 @@
   .card-footer
     .text-warning.fa.fa-star
     %b= course.average_rating
-    
-  /Enrollments count:
-  /= course.enrollments.count
-  Counter cache enrollments count:
-  = course.enrollments_count
-  
+
+    /Enrollments count:
+    /= course.enrollments.count
+    /Counter cache enrollments count:
+    (
+    .fa.fa-user-graduate
+    = course.enrollments_count
+    )
+
   .card-footer
     .fa.fa-tasks
-    = course.lessons.count
+    = course.lessons_count
   .card-footer
     .row
       .col-md-6
@@ -39,12 +42,10 @@
         .text-right
           .fa.fa-chalkboard-teacher
           = link_to course.user.username, user_path(course.user)
-    - if current_user
-      - if policy(course).edit?
-        .card-footer
-          - if policy(course).edit?
-            = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-warning'
-          - if policy(course).destroy?
-            = link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
-          
-        
+  - if current_user
+    - if policy(course).edit?
+      .card-footer
+        /- if policy(course).edit?
+        = link_to 'Edit', edit_course_path(course), class: 'btn btn-sm btn-warning'
+        /- if policy(course).destroy?
+        = link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'
