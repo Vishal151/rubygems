@@ -1,11 +1,14 @@
 - content_for :title do
   Corsego 
   \| 
-  All Enrollments
+  = action_name.humanize
+  enrollments
 
 %h3
   .text-center
-    Enrollments
+    .fa.fa-lock-open
+    = action_name.humanize
+    enrollments
     .badge.badge-info
       = @enrollments.count
 %p
@@ -49,7 +52,6 @@
         %th 
           = sort_link(@q, :rating)
           .text-warning.fa.fa-star
-    
         %th 
           .text-warning.fa.fa-comment
           Review
@@ -61,7 +63,7 @@
       - @enrollments.each do |enrollment|
         %tr
           %td= enrollment.id
-          %td= link_to enrollment.user, user_path(enrollment.user)
+          %td= link_to enrollment.user.email, user_path(enrollment.user)
           %td= enrollment.created_at.strftime("%d/%b/%Y, %H:%M")
           %td= link_to enrollment.course, course_path(enrollment.course)
           %td= number_to_currency(enrollment.price)
@@ -75,4 +77,3 @@
           %td= link_to 'Delete Enrollment', enrollment, method: :delete, data: { confirm: 'Are you sure?' }
 != pagy_bootstrap_nav(@pagy)
 %br
-
