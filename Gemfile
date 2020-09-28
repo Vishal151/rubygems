@@ -45,3 +45,4 @@ gem 'exception_notification', group: :production
 gem 'pagy'
 gem "chartkick"
 gem 'groupdate'
+gem 'rails-erd', group: :development #sudo apt-get install graphviz; bundle exec erd
