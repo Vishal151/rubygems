@@ -6,16 +6,17 @@
   \/
   New lesson
 
-= link_to 'Courses', courses_path 
+= link_to 'Courses', courses_path
 \/
-= link_to @course.title, course_path(@course)
+= link_to course_path(@course) do
+  .fa.fa-graduation-cap
+  = @course.title
 \/
-New
-%p
+New lesson
 
 .card
   .card-header
-    %h3 
+    %h3
       .far.fa-check-square
       New lesson
   .card-body
