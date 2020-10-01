@@ -28,6 +28,8 @@ import "../trix-editor-overrides"
 require("jquery")
 require("jquery-ui-dist/jquery-ui");
 
+import videojs from 'video.js'
+import 'video.js/dist/video-js.css'
 
 $(document).on('turbolinks:load', function(){
   $('.lesson-sortable').sortable({
@@ -50,4 +52,21 @@ $(document).on('turbolinks:load', function(){
       console.log("stop called when finishing sort of cards");
     }
   });
+  
+  let videoPlayer = videojs(document.getElementById('my-video'), {
+    controls: true,
+    playbackRates: [0.5, 1, 1.5],
+    autoplay: false,
+    fluid: true,
+    preload: false,
+    autoplay: false,
+    liveui: true,
+    responsive: true,
+    loop: false,
+    poster: "https://cdn.lynda.com/course/612167/612167-637286221576969639-16x9.jpg"
+  })
+  
+  videoPlayer.addClass('video-js')
+  videoPlayer.addClass('vjs-big-play-centered')
+
 });
