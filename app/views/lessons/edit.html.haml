@@ -4,17 +4,20 @@
   Course
   = @course.title
   \/
-  Edit lesson
+  Editing lesson
   = @lesson.title
 
 = link_to 'Courses', courses_path 
 \/
-= link_to @lesson.course.title, course_path(@lesson.course)
+.fa.fa-graduation-cap
+= link_to course_path(@course) do
+  = @course.title
 \/
-= link_to @lesson.title, course_lesson_path(@course, @lesson)
+.fa.fa-check-square
+= link_to course_lesson_path(@course, @lesson) do
+  = @lesson.title
 \/
-edit
-%p
+= link_to 'Edit Lesson', edit_course_lesson_path(@course, @lesson)
 
 .card
   .card-header

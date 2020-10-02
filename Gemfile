@@ -43,7 +43,7 @@ gem "rolify" #give users roles (admin, teacher, student)
 gem "pundit" #authorization (different roles have different accesses)
 gem 'exception_notification', group: :production #notify if errors in production
 gem 'pagy' #pagination
-gem "chartkick" #charts
+gem "chartkick" #charts #yarn add chartkick chart.js
 gem 'groupdate' #group records by day/week/year
 gem 'rails-erd', group: :development #sudo apt-get install graphviz; bundle exec erd
 gem 'ranked-model' #give serial/index numbers to items in a list
