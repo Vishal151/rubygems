@@ -9,37 +9,37 @@
 
 <url>
   <loc>http://collabor8-app.herokuapp.com/</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://collabor8-app.herokuapp.com/users/sign_up</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://collabor8-app.herokuapp.com/users/sign_in</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://collabor8-app.herokuapp.com/courses/learn-20-ruby-gems</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://collabor8-app.herokuapp.com/privacy_policy</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://collabor8-app.herokuapp.com/users/confirmation/new</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://collabor8-app.herokuapp.com/users/password/new</loc>
-  <lastmod>2020-10-03T09:19:57+00:00</lastmod>
+  <lastmod>2020-10-03T09:33:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
