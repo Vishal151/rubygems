@@ -28,6 +28,8 @@ import "../trix-editor-overrides"
 require("jquery")
 require("jquery-ui-dist/jquery-ui");
 
+require("selectize")
+
 import "youtube"
 
 $(document).on('turbolinks:load', function(){
@@ -52,8 +54,14 @@ $(document).on('turbolinks:load', function(){
     }
   });
   
-    $("video").bind("contextmenu",function(){
-      return false;
+  $("video").bind("contextmenu",function(){
+    return false;
   });
+
+  if ($('.selectize')){
+      $('.selectize').selectize({
+          sortField: 'text'
+      });
+  }
 
 });
