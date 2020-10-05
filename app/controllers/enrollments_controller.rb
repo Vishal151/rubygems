@@ -29,7 +29,7 @@ class EnrollmentsController < ApplicationController
       format.pdf do
         render pdf: "#{@enrollment.course.title}, #{@enrollment.user.email}",
         page_size: 'A4',
-        template: "enrollments/show.pdf.haml"
+        template: "enrollments/certificate.pdf.haml"
       end
     end
   end
