@@ -48,6 +48,7 @@ class EnrollmentsController < ApplicationController
   def create
       @enrollment = current_user.buy_course(@course)
       redirect_to course_path(@course), notice: "You are enrolled!"
+      EnrollmentMailer.new_enrollment(@enrollment).deliver_later
   end
 
   def update
