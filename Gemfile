@@ -57,3 +57,4 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-heroku', group: :production
 gem 'wkhtmltopdf-binary', group: :development
 gem 'wicked' #multi-step forms
+gem "cocoon"
