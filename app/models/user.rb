@@ -15,7 +15,10 @@ class User < ApplicationRecord
   after_create do
     UserMailer.new_user(self).deliver_later
   end
-
+  
+  include PublicActivity::Model
+  tracked only: [:create, :destroy], owner: :itself
+  #tracked owner: Proc.new{ |controller, model| controller.current_user } #current_user is set after create, so it gives an error
 
   def self.from_omniauth(access_token)
     data = access_token.info
