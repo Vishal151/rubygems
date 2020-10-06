@@ -56,3 +56,4 @@ gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-heroku', group: :production
 gem 'wkhtmltopdf-binary', group: :development
+gem 'wicked' #multi-step forms
