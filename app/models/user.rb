@@ -11,6 +11,11 @@ class User < ApplicationRecord
   has_many :enrollments, dependent: :nullify
   has_many :user_lessons, dependent: :nullify
   has_many :comments, dependent: :nullify
+  
+  after_create do
+    UserMailer.new_user(self).deliver_later
+  end
+
 
   def self.from_omniauth(access_token)
     data = access_token.info
