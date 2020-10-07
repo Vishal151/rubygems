@@ -3,8 +3,6 @@
     #lessons
       = f.simple_fields_for :lessons do |lesson|
         = render 'lesson_fields', f: lesson
-        %p
-        %p
       .links
         %p
         = link_to_add_association 'add lesson +', f, :lessons, class: 'btn btn-sm btn-primary'

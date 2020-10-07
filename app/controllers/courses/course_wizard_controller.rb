@@ -2,9 +2,9 @@ class Courses::CourseWizardController < ApplicationController
   include Wicked::Wizard
   before_action :set_progress, only: [:show, :update]
   before_action :set_course, only: [:show, :update, :finish_wizard_path]
-  
+
   steps :landing_page, :targeting, :pricing, :lessons, :publish
-  
+
   def show
     authorize @course, :edit?
     #@user = current_user
@@ -18,7 +18,7 @@ class Courses::CourseWizardController < ApplicationController
     end
     render_wizard
   end
-  
+
   def update
     authorize @course, :edit?
     case step
@@ -32,13 +32,13 @@ class Courses::CourseWizardController < ApplicationController
     @course.update_attributes(course_params)
     render_wizard @course
   end
-  
+
   def finish_wizard_path
     authorize @course, :edit?
     #courses_path
     course_path(@course)
   end
-
+  
   private
     def set_progress
       if wizard_steps.any? && wizard_steps.index(step).present?
@@ -47,7 +47,7 @@ class Courses::CourseWizardController < ApplicationController
         @progress = 0
       end
     end
-    
+
     def set_course
       @course = Course.friendly.find params[:course_id]
     end
@@ -58,5 +58,5 @@ class Courses::CourseWizardController < ApplicationController
         lessons_attributes: [:id, :title, :content, :_destroy]
         )
     end
-    
+
 end
